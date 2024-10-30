@@ -96,15 +96,15 @@ char	*read_file(int fd, char *box)
 
 char	*get_next_line(int fd)
 {
-	static char	*box;
+	static char	*box[4096];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	box = read_file(fd, box);
-	if (!box)
+	box[fd] = read_file(fd, box[fd]);
+	if (!box[])
 		return (NULL);
-	line = newline(box);
-	box = update_box(box);
+	line = newline(box[fd]);
+	box[fd] = update_box(box[fd]);
 	return (line);
 }
