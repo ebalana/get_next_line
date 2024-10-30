@@ -102,7 +102,7 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	box[fd] = read_file(fd, box[fd]);
-	if (!box[])
+	if (!box[fd])
 		return (NULL);
 	line = newline(box[fd]);
 	box[fd] = update_box(box[fd]);
