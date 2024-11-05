@@ -16,7 +16,7 @@
 # include <fcntl.h>   // Para open
 # include <unistd.h>  // Para read, close
 # include <stdio.h>   // Para printf
-# include <stdlib.h>  // Para NULL
+# include <stdlib.h>  // Para malloc
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
